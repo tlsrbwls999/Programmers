@@ -1,0 +1,10 @@
+def solution(a, b):
+    num=list()
+    if a<=b:
+        for i in range(a,b+1):
+            num.append(i)
+    else:
+        for i in range(a,b-1,-1):
+            num.append(i)
+    answer=sum(num)
+    return answer
