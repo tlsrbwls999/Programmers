@@ -1,0 +1,6 @@
+def numPY(s):
+    return s.lower().count('p') == s.lower().count('y')
+
+
+
+#count라는 함수로 간략화
