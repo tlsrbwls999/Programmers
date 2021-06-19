@@ -1,0 +1,7 @@
+def solution(s):
+    answer=''
+    for i in s.split(" "):
+        a=i.lower()
+        a=a.capitalize()
+        answer+=a+' '
+    return answer[:-1]
