@@ -1,0 +1,8 @@
+def solution(n):
+    cnt=1
+    while True:
+        a=bin(n)
+        b=bin(n+cnt)
+        if a.count('1')==b.count('1'):
+            return n+cnt
+        cnt+=1
