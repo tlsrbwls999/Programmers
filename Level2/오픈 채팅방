@@ -1,0 +1,20 @@
+def solution(record):
+    name=[]
+    user={}
+    for i in record:
+        data=i.split(" ")
+        if data[0]=='Enter':
+            user[data[1]]=data[2]
+        elif data[0]=='Change':
+            user[data[1]]=data[2]
+    
+    for j in record:
+        mes=j.split(" ")
+        if mes[0]=="Enter":
+            name.append(f'{user[mes[1]]}님이 들어왔습니다.')
+        elif mes[0]=="Change":
+            pass
+        elif mes[0]=='Leave':
+            name.append(f'{user[mes[1]]}님이 나갔습니다.')
+        
+    return name
