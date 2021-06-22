@@ -1,0 +1,28 @@
+from collections import Counter
+def solution(str1, str2):
+    str1=str1.upper()
+    str2=str2.upper()
+    
+    result_one=list()
+    result_two=list()
+
+    for i in range(len(str1)-1):
+        if str1[i].isalpha():
+            if str1[i+1].isalpha():
+                result_one.append(str1[i]+str1[i+1])
+    for i in range(len(str2)-1):
+        if str2[i].isalpha():
+            if str2[i+1].isalpha():
+                result_two.append(str2[i]+str2[i+1])
+    
+    c1=Counter(result_one)
+    c2=Counter(result_two)
+
+    union=list((c1&c2).elements())
+    inter=list((c1|c2).elements())
+
+    if len(union)==0 and len(inter)==0:
+        return 65536
+    else:
+        return int(len(union)/len(inter)*65536)
+    
