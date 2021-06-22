@@ -1,0 +1,19 @@
+from itertools import combinations
+from collections import Counter
+def solution(orders, course):
+    result=list()
+    for num in course:
+        temp=[]
+        for order in orders:
+            combi=combinations(sorted(order),num)
+            temp+=combi
+        cnt=Counter(temp)
+
+        if cnt:
+            max_num=max(cnt.values())
+            if max_num>=2:
+                for key,value in cnt.items():
+                    if value==max_num:
+                        result.append(''.join(key))
+                        
+    return sorted(result)
