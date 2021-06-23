@@ -9,11 +9,9 @@ def solution(s):
         i=i.split(',')
         for j in i:
             if len(temp)==0:
-                temp.append(j)
-            if j in temp:
+                temp.append(int(j))
+            if int(j) in temp:
                 pass
             else:
-                temp.append(j)
-    for i in temp:
-        result.append(int(i))
-    return result
+                temp.append(int(j))
+    return temp
