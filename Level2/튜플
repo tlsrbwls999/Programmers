@@ -1,0 +1,19 @@
+def solution(s):
+    s=s[2:-2]
+    s=s.split('},{')
+    s.sort(key=len)
+    
+    temp=list()
+    result=[]
+    for i in s:
+        i=i.split(',')
+        for j in i:
+            if len(temp)==0:
+                temp.append(j)
+            if j in temp:
+                pass
+            else:
+                temp.append(j)
+    for i in temp:
+        result.append(int(i))
+    return result
