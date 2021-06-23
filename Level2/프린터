@@ -1,0 +1,18 @@
+def solution(priorities, location):
+    answer=list()
+    idx=0
+    for i in priorities:
+        answer.append((i,idx))
+        idx+=1
+
+    cnt=0
+    while True:
+        a,b=answer.pop(0)
+        for i,j in answer:
+            if i>a:
+                answer.append((a,b))
+                break
+        else:
+            cnt+=1
+            if b==location:
+                return cnt
