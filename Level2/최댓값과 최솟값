@@ -1,0 +1,9 @@
+def solution(s):
+    s=s.split(' ')
+    result=list()
+    for i in s:
+        result.append(int(i))
+    result.sort()
+    answer=''
+    answer=str(result[0])+' '+str(result[-1])
+    return answer
