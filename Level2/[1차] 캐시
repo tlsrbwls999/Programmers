@@ -1,0 +1,16 @@
+def solution(cacheSize, cities):
+    time=0
+    result=list()
+    
+    while cities:
+        city=cities.pop(0)
+        if city.upper() in result:
+            time+=1
+            result.remove(city.upper())
+            result.append(city.upper())
+        else:
+            time+=5
+            result.append(city.upper())
+            if len(result)>cacheSize:
+                result.pop(0)
+    return time
