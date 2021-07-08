@@ -7,8 +7,4 @@ def solution(land):
             for k in range(m):
                 if j!=k:
                     land[i][j]=max(land[i][j],a+land[i-1][k])
-    max_num=0
-    for a in range(m):
-        if land[n-1][a]>max_num:
-            max_num=land[n-1][a]
-    return max_num
+    return max(land[-1])
