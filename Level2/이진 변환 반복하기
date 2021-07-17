@@ -1,0 +1,38 @@
+def solution(s):
+    temp=list(s)
+    cnt_z=0
+    cnt=0
+    bin_num=0
+    n=0
+    while True:
+        cnt+=1 
+        while True:
+            a=temp.pop(0)
+            if a=='1':
+                temp.append(a)
+            else:
+                cnt_z+=1
+            if '0' not in temp:
+                break
+        n=len(temp)
+        bin_num=bin(n)
+        bin_num=str(bin_num[2:])
+        if bin_num=='1':
+            return [cnt,cnt_z]
+        temp=[]
+        for k in bin_num:
+            temp.append(k)
+           
+---------------------------------------------------------------
+def solution(s):
+    a, b = 0, 0
+    while s != '1':
+        a += 1
+        num = s.count('1')
+        b += len(s) - num
+        s = bin(num)[2:]
+    return [a, b]
+    
+    
+    
+ 삽질과 효율성의 차이
