@@ -1,0 +1,50 @@
+def solution(numbers):
+    result=[]
+    for i in numbers:
+        num=i
+        while True:
+            num+=1
+            cnt=0
+            a=bin(i)[2:]
+            b=bin(num)[2:]
+            if len(a)!=len(b):
+                cnt+=len(b)-len(a)
+                for j in range(-1,-len(a)-1,-1):
+                    if a[j]!=b[j]:
+                        cnt+=1
+                        if cnt>2:
+                            break
+                if cnt<=2:
+                    break
+            else:
+                for k in range(0,len(a)):
+                    if a[-k]!=b[-k]:
+                        cnt+=1
+                        if cnt>2:
+                            break                
+                if cnt<=2:
+                    break
+        result.append(num)
+    return result
+    
+    
+    맨뒤에 두문제 시간초과 발생 ㅠㅠㅠ
+    ------------------------------
+    
+    def solution(numbers):
+    answer = []
+
+    for number in numbers:
+        bin_number = list('0' + bin(number)[2:])
+        idx = ''.join(bin_number).rfind('0')
+        bin_number[idx] = '1'
+        
+        if number % 2 == 1:
+            bin_number[idx+1] = '0'
+        
+        answer.append(int(''.join(bin_number), 2))
+
+    return answer
+    
+    
+    참신한 아이디어 떠올리기가 쉽지않다
