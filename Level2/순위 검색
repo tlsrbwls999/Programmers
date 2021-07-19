@@ -1,0 +1,30 @@
+def solution(info, query):
+    n=len(query)
+    check=[0]*n
+    condition=list()
+    result=list()
+    for i in query:
+        a,b,c,d=i.split(' and ')
+        k,s=d.split(' ')
+        condition.append([a,b,c,k,s])
+    for name in info:
+        language,end,year,food,score=name.split(' ')
+        idx=0
+        for a,b,c,d,e in condition:
+            x,y,z,j=a,b,c,d
+            if x=='-':
+                x=language
+            if y=='-':
+                y=end
+            if z=='-':
+                z=year
+            if j=='-':
+                j=food
+            if language==x and end==y and year==z and food==j and int(score)>=int(e):
+                check[idx]+=1
+            idx+=1
+    
+    return check
+
+----------------------------------------------
+효율성을 통과하지는 못함, 정확성만 통과한 코드 ㅠㅠ
